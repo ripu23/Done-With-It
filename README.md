@@ -7,5 +7,10 @@ This mobile application is a part of react-native tutorial series. It is an appl
 
 ## Some screenshots of the application
 
-<img src="https://github.com/ripu23/Done-With-It/blob/master/Screenshots/S1.png" height="40%">.
+
+
+<img src="https://github.com/ripu23/Done-With-It/blob/master/Screenshots/S1.png" width="200" height="400">
 <br>
+<img src="https://github.com/ripu23/Done-With-It/blob/master/Screenshots/S2.png" width="200" height="400">.
+<img src="https://github.com/ripu23/Done-With-It/blob/master/Screenshots/S3.png" width="200" height="400">.
+<img src="https://github.com/ripu23/Done-With-It/blob/master/Screenshots/S4.png" width="200" height="400">.
