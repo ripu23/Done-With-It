@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
-import AppText from './AppText';
-import colors from '../config/colors';
+import AppText from '../AppText';
+import colors from '../../config/colors';
+import defaultStyles from '../../config/styles';
 
-const ListItem = ({ title, subTitle, image, IconComponent, onPress, renderRightActions }) => {
+const ListItem = ({ title, subTitle, image, IconComponent, onPress, renderRightActions, showChevrons }) => {
     return (
         <Swipeable renderRightActions={renderRightActions}>
             <TouchableHighlight
@@ -16,9 +18,19 @@ const ListItem = ({ title, subTitle, image, IconComponent, onPress, renderRightA
                     {IconComponent}
                     {image && <Image style={styles.image} source={image} />}
                     <View style={styles.detailsContainer}>
-                        <AppText style={styles.title}>{title}</AppText>
-                        {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+                        <AppText numberOfLines={1} style={styles.title}>{title}</AppText>
+                        {subTitle && <AppText numberOfLines={2} style={styles.subTitle}>{subTitle}</AppText>}
                     </View>
+
+                    {showChevrons &&
+                        <View>
+                            <MaterialCommunityIcons
+                                name='chevron-right'
+                                size={25}
+                                color={defaultStyles.colors.medium}
+                            />
+                        </View>
+                    }
                 </View>
             </TouchableHighlight>
         </Swipeable>
@@ -27,11 +39,13 @@ const ListItem = ({ title, subTitle, image, IconComponent, onPress, renderRightA
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: 'center',
         flexDirection: 'row',
         padding: 15,
         backgroundColor: colors.white
     },
     detailsContainer: {
+        flex: 1,
         marginLeft: 10,
         justifyContent: 'center'
     },

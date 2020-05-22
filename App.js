@@ -6,7 +6,7 @@ import Card from './app/components/Card';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
-import ListItem from './app/components/ListItem';
+import ListItem from './app/components/lists/ListItem';
 import Screen from './app/components/Screen';
 import Icon from './app/components/Icon';
 import AccountScreen from './app/screens/AccountScreen';
@@ -15,6 +15,7 @@ import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 import LoginScreen from './app/screens/LoginScreen';
 import RegisterScreen from './app/screens/RegisterScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
 
 export default function App() {
   const categories = [
@@ -50,6 +51,7 @@ export default function App() {
     //   <AppTextInput icon='email' placeholder='email' />
     // </Screen>
     // <LoginScreen />
-    <RegisterScreen />
+    // <RegisterScreen />
+    <ListingEditScreen />
   );
 }
