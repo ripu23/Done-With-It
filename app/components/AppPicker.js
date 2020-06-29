@@ -5,9 +5,9 @@ import { View, StyleSheet, TouchableWithoutFeedback, Modal, Button, FlatList } f
 import defaultStyles from '../config/styles';
 import AppText from './AppText';
 import Screen from './Screen';
-import PickerItem from './PickerItem';
+import CategoryPickerItem from './CategoryPickerItem';
 
-const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem, width = '100%' }) => {
+const AppPicker = ({ icon, items, numberOfColumns = 1, onSelectItem, placeholder, selectedItem, width = '100%' }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
@@ -33,9 +33,10 @@ const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem, width
                     <FlatList
                         data={items}
                         keyExtractor={item => item.value.toString()}
+                        numColumns={numberOfColumns}
                         renderItem={({ item }) =>
-                            <PickerItem
-                                label={item.label}
+                            <CategoryPickerItem
+                                item={item}
                                 onPress={() => {
                                     setModalVisible(false);
                                     onSelectItem(item);
